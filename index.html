@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Task Manager Pro</h1>
+  </nav>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>Contact Support</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <select id="subject" required>
+          <option value="">Select Subject</option>
+          <option value="general">General Inquiry</option>
+          <option value="technical">Technical Support</option>
+          <option value="feedback">Feedback</option>
+        </select>
+        <textarea id="message" placeholder="Your Message" required rows="5"></textarea>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+        <p class="error" id="formError"></p>
+      </form>
+    </section>
+
+    <section class="todo-section">
+      <h2>Task Manager</h2>
+      <div class="task-filters">
+        <select id="priorityFilter">
+          <option value="all">All Priorities</option>
+          <option value="high">High Priority</option>
+          <option value="medium">Medium Priority</option>
+          <option value="low">Low Priority</option>
+        </select>
+        <select id="statusFilter">
+          <option value="all">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div class="task-input-group">
+        <input type="text" id="taskInput" placeholder="Enter a task" />
+        <select id="taskPriority">
+          <option value="low">Low Priority</option>
+          <option value="medium">Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
+        <button onclick="addTask()"><i class="fas fa-plus"></i> Add Task</button>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+
+    <section class="task-stats">
+      <h2>Task Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <i class="fas fa-tasks"></i>
+          <h3>Total Tasks</h3>
+          <p id="totalTasks">0</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-check-circle"></i>
+          <h3>Completed</h3>
+          <p id="completedTasks">0</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-clock"></i>
+          <h3>Pending</h3>
+          <p id="pendingTasks">0</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="theme-switch" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
